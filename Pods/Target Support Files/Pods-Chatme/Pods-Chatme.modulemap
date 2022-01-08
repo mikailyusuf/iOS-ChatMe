@@ -1,0 +1,6 @@
+module Pods_Chatme {
+  umbrella header "Pods-Chatme-umbrella.h"
+
+  export *
+  module * { export * }
+}
