@@ -29,7 +29,36 @@ class ChatViewController: UIViewController {
         tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         title = Constants.appName
         navigationItem.hidesBackButton = true
+        loadMessages()
         // Do any additional setup after loading the view.
+    }
+    
+    func loadMessages(){
+        
+        db.collection(Constants.FireStore.ColectionName).order(by: Constants.FireStore.date).addSnapshotListener { querySnapshot, error in
+            
+            self.messages = []
+            
+                if let error = error {
+                    print("Error retreiving collection: \(error)")
+                }else{
+                    if let documentSnapShot = querySnapshot?.documents{
+                        
+                        for doc in documentSnapShot{
+                            let data = doc.data()
+                            if let sender = data[Constants.FireStore.sender] as? String, let body = data[Constants.FireStore.body] as? String{
+                                
+                                let message = Message(sender: sender, body: body)
+                                self.messages.append(message)
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
     }
     
 
@@ -40,7 +69,9 @@ class ChatViewController: UIViewController {
     
             db.collection(Constants.FireStore.ColectionName).addDocument(data: [
                 Constants.FireStore.sender: user,
-                Constants.FireStore.body: message])
+                Constants.FireStore.body: message,
+                Constants.FireStore.date: Date().timeIntervalSince1970
+            ])
             { err in
                 if let err = err {
                     print("Error adding document: \(err)")
