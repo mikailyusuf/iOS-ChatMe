@@ -23,6 +23,7 @@
 		5260FDFB2789C7940050408C /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260FDF92789C7940050408C /* MessageCell.swift */; };
 		5260FDFC2789C7940050408C /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5260FDFA2789C7940050408C /* MessageCell.xib */; };
 		5260FDFF278A19620050408C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5260FDFE278A19620050408C /* IQKeyboardManagerSwift */; };
+		5260FE01278A2BD10050408C /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5260FE00278A2BD10050408C /* screenshot.png */; };
 		8224B147A074DBDE2CEAE7F5 /* libPods-Chatme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF4AFF4F1B1434814A548CC /* libPods-Chatme.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		5260FDF72789C1580050408C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5260FDF92789C7940050408C /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5260FDFA2789C7940050408C /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		5260FE00278A2BD10050408C /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		DBF4AFF4F1B1434814A548CC /* libPods-Chatme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chatme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 		5260FDF02789A5C80050408C /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				5260FE00278A2BD10050408C /* screenshot.png */,
 				5260FDF32789A8450050408C /* Constants.swift */,
 			);
 			path = utils;
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5260FDFC2789C7940050408C /* MessageCell.xib in Resources */,
+				5260FE01278A2BD10050408C /* screenshot.png in Resources */,
 				5260FDDE27895F340050408C /* LaunchScreen.storyboard in Resources */,
 				5260FDEF278998D70050408C /* GoogleService-Info.plist in Resources */,
 				5260FDDB27895F340050408C /* Assets.xcassets in Resources */,
