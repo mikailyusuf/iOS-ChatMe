@@ -13,6 +13,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messagetextField: UITextField!
     
+    let db = Firestore.firestore()
+    
     var messages:[Message] = [
         Message(sender: "devmk@yahoo.com", body: "Hi"),
         Message(sender: "abdul@gmail.com", body: "How You"),
@@ -32,6 +34,23 @@ class ChatViewController: UIViewController {
     
 
     @IBAction func actionSendMessage(_ sender: Any) {
+        
+        if  let message = messagetextField.text ,let user = Auth.auth().currentUser?.email{
+            // Add a new document with a generated ID
+    
+            db.collection(Constants.FireStore.ColectionName).addDocument(data: [
+                Constants.FireStore.sender: user,
+                Constants.FireStore.body: message])
+            { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    self.messagetextField.text = ""
+                }
+            }
+        }
+        
+        
         
     }
     /*

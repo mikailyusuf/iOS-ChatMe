@@ -14,4 +14,11 @@ struct Constants{
     static let appName = "Chat me"
     static let cellIdentifier = "chatCell"
     static let cellNibName = "MessageCell"
+    
+    
+    struct FireStore{
+        static let ColectionName = "messages"
+        static let sender = "Sender"
+        static let body = "body"
+    }
 }
